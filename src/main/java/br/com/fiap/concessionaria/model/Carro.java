@@ -1,10 +1,18 @@
 package br.com.fiap.concessionaria.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "carro")
 public class Carro {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String modelo;
     private String ano;
+    @ManyToOne(targetEntity = Fabricante.class)
+    @JoinColumn(name = "fabricante_id")
     private Fabricante fabricante;
 
     public int getId() {

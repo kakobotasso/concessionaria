@@ -1,6 +1,13 @@
 package br.com.fiap.concessionaria.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "fabricante")
 public class Fabricante {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
 
